@@ -20,7 +20,7 @@ export const getCurrentProfile = () => async (dispatch) => {
 
 // Create profile or update profile
 export const createProfile =
-  (FormData, navigate, edit = false) =>
+  (formData, navigate, edit = false) =>
   async (dispatch) => {
     try {
       const config = {
@@ -29,7 +29,7 @@ export const createProfile =
         },
       };
 
-      const res = await axios.post("/api/profile", FormData, config);
+      const res = await axios.post("/api/profile", formData, config);
 
       dispatch({
         type: GET_PROFILE,
