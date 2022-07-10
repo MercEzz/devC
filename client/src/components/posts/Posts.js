@@ -12,7 +12,7 @@ const Posts = ({ getPosts, post: { posts, loading } }) => {
   return loading ? (
     <Spinner />
   ) : (
-    <>
+    <div className="container">
       <h1 className="large text-primary">Posts</h1>
       <p className="lead">
         <i className="fas fa-user"></i> Wecome to the community
@@ -23,7 +23,7 @@ const Posts = ({ getPosts, post: { posts, loading } }) => {
           <PostItem key={post._id} post={post} />
         ))}
       </div>
-    </>
+    </div>
   );
 };
 
