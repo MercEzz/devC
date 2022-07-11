@@ -1,6 +1,12 @@
 import axios from "axios";
 import { setAlert } from "./alert";
-import { ADD_POST, GET_POSTS, POST_ERROR, UPDATE_LIKES } from "./types";
+import {
+  ADD_POST,
+  GET_POST,
+  GET_POSTS,
+  POST_ERROR,
+  UPDATE_LIKES,
+} from "./types";
 
 // Get posts
 export const getPosts = () => async (dispatch) => {
@@ -103,7 +109,7 @@ export const getPost = (id) => async (dispatch) => {
     const res = await axios.get(`/api/posts/${id}`);
 
     dispatch({
-      type: GET_POSTS,
+      type: GET_POST,
       payload: res.data,
     });
   } catch (err) {
